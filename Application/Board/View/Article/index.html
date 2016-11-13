@@ -7,7 +7,37 @@
 </head>
 <body>
 	<include file="Public/nav" />	
-	这个页面是文章管理页面
+	<div class="operate">
+		<form>
+			<div class="form-group col-sm-3">
+				<input type="text" class="form-control" name="search" placeholder="查询条件">
+			</div>
+			<div class="form-group col-sm-3">
+				<a href="javascript:;" class="btn btn-primary">查询</a>
+				&nbsp;
+				<a href="__ROOT__/board/article/add" class="btn btn-success">新增</a>
+			</div>
+		</form>
+	</div>
+	<div class="container-fluid">
+		<div class="">
+			<ul class="article-list row">
+				<volist name="list" id="vo">
+					<a href="__ROOT__/board/article/info/{$vo.id}">
+						<li class="col-sm-3" data-id="{$vo.id}">
+							<div>
+									<i class="close">×</i>
+									<h5 class="title">{$vo.title}</h5>
+									<span>time:{$vo.time}</span>
+									<p>{$vo.info}</p>
+							</div>
+						</li>
+					</a>
+				</volist>
+			</ul>
+		</div>	
+	</div>
+
 	<include file="Public/footer" />
 </body>
 </html>
