@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default" role="navigation">
+	    <div class="container-fluid">
+		    <div class="navbar-header">
+			    <button type="button" class="navbar-toggle" data-toggle="collapse"
+		                data-target="#my-navbar-collapse">
+		            <span class="sr-only">切换导航</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		        </button>
+		        <a class="navbar-brand" href="__ROOT__/board">Togor</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="my-navbar-collapse">
+		        <ul class="nav navbar-nav">
+		            <li class='<eq name="menu" value="article">active</eq>'><a href="__ROOT__/board/article">文章管理</a></li>
+		            <li class='<eq name="menu" value="announcement">active</eq>'><a href="__ROOT__/board/announcement">公告管理</a></li>
+		            <li class="dropdown" class='<eq name="menu" value="announcement">active</eq>'>
+		                <a href="__ROOT__/board/user" class="dropdown-toggle" data-toggle="dropdown">
+		                    管理人员设置
+		                    <b class="caret"></b>
+		                </a>
+		                <ul class="dropdown-menu">
+		                    <li><a href="#">jmeter</a></li>
+		                    <li><a href="#">EJB</a></li>
+		                    <li><a href="#">Jasper Report</a></li>
+		                    <li class="divider"></li>
+		                    <li><a href="#">分离的链接</a></li>
+		                    <li class="divider"></li>
+		                    <li><a href="#">另一个分离的链接</a></li>
+		                </ul>
+		            </li>
+		        </ul>
+		    </div>
+		    <div class="user user-btn">
+		    	<a href="#">{:session('user_name')}</a>
+		    	<a href="javascript:;" id="logout">logout</a>
+		    </div>
+	    </div>
+	</nav>
