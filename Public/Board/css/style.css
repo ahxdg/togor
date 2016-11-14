@@ -1,6 +1,6 @@
 /* reset */
 li{list-style: none;}
-ul{padding: 0;margin: 0;}
+ul,p{padding: 0;margin: 0;}
 body{
 	background-color: #f7f7f7;
 	padding-bottom: 60px;
@@ -121,8 +121,21 @@ form#login .form-group{
 	overflow: hidden;
 }
 
-
-
+.article-info .title{
+	text-align: center;
+	font-size: 16px;
+	color: #000;
+	font-weight: bold;
+}
+.article-info .profiles{
+	text-align: center;
+}
+.article-info .info{
+	padding-top: 20px;
+	margin-top: 20px;
+	border-top:1px dashed #eee;
+	line-height: 26px;
+}
 
 
 

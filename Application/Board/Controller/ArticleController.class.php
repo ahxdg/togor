@@ -48,4 +48,48 @@ class ArticleController extends BaseController {
     		$this->ajaxReturn(make_rtn('操作失败！'));
     	}
     }
+    public function info(){
+        $id = $_GET['id'];
+        if (empty($id)) {
+            $this->assign('err','true');
+            $this->assign('info','该文章被火星人吃掉了...');
+        }
+        $Article = M('Article');
+        $data['id'] = $id;
+        $res = $Article->where($data)->select();
+        if ($res) {
+            $info = $res[0];
+            $arr = explode(' ', $info['time'], 2);
+            $info['time'] = $arr[0];
+            $this->assign('info',$info);
+        }else{
+            $this->assign('err','true');
+            $this->assign('info','该文章被火星人吃掉了...');
+        }
+        $this->display();
+    }
+    public function updata(){
+        if (IS_POST) {
+            $post = I('post.');
+            if (empty($post['title'])) {
+                $this->ajaxReturn(make_rtn('请输入文章标题！'));
+            }
+            if (empty($post['info'])) {
+                $this->ajaxReturn(make_rtn('请输入文章内容！'));
+            }
+            $Article = M('Article');
+            $data['title'] = $post['title'];
+            $data['profiles'] = $post['profiles'];
+            $data['info'] = $post['info'];
+            $data['time'] = date('Y-m-d');
+            $arr['id'] = $post['id'];
+            $res = $Article->where($arr)->save($data);
+            if ($res) {
+                $this->ajaxReturn(make_rtn('修改成功！',true));
+            }else{
+                $this->ajaxReturn(make_rtn('修改失败！'));
+            }
+            
+        }
+    }
 }
