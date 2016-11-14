@@ -20,6 +20,15 @@
 				</div>
 				<div class="clear"></div>
 				<div class="form-group mb0">
+					<label for="title" class="control-label col-sm-3">文章概述：</label>
+				</div>
+				<div class="form-group col-sm-12">
+					<div class="col-sm-6">
+						<input type="text" class="form-control" name="profiles">
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="form-group mb0">
 					<label for="title" class="control-label col-sm-3">文章内容：</label>
 				</div>
 				<div class="form-group col-sm-12">
@@ -50,6 +59,7 @@
 	    $('#submit').on('click',function(){
 			var data = {};
 				data.title = $('form input[name="title"]').val();	
+				data.profiles = $('form input[name="profiles"]').val();	
 		    	data.info = getContent(this);
 		    $.ajax({
 		    	url:'__ROOT__/board/article/add',

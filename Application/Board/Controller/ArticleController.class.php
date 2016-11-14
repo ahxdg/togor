@@ -26,7 +26,8 @@ class ArticleController extends BaseController {
     			$this->ajaxReturn(make_rtn('请输入文章内容！'));
     		}
     		$Article = M('Article');
-    		$data['title'] = $post['title'];
+            $data['title'] = $post['title'];
+    		$data['profiles'] = $post['profiles'];
     		$data['info'] = $post['info'];
     		$data['time'] = date('Y-m-d');
     		$Article->add($data);

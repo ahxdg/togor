@@ -67,6 +67,7 @@ form#login .form-group{
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
+	font-weight: bold;
 }
 .article-list li>div{
 	background-color: #fff;
@@ -79,6 +80,7 @@ form#login .form-group{
 	box-shadow: 0 0 10px #ddd; 
 }
 .article-list li>div p{
+	margin-top: 10px;
 	height: 60px;
 	line-height: 20px;
 	overflow: hidden;	
@@ -86,7 +88,7 @@ form#login .form-group{
 	color: #666;
 }
 .article-list li>div span{
-	color: #666;
+	color: #999;
 }
 .article-list li>div i.close{
 	width:20px;
@@ -151,6 +153,10 @@ form#login .form-group{
 	}
 	.add-article{
 		padding: 0;
+	}
+	.article-list{
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 	#edui2{
 		display: none;

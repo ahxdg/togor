@@ -26,10 +26,10 @@
 					<a href="__ROOT__/board/article/info/{$vo.id}">
 						<li class="col-sm-3" data-id="{$vo.id}">
 							<div>
-									<i class="close">×</i>
-									<h5 class="title">{$vo.title}</h5>
-									<span>time:{$vo.time}</span>
-									<p>{$vo.info}</p>
+								<i class="close">×</i>
+								<h5 class="title">{$vo.title}</h5>
+								<span>time:{$vo.time}</span>
+								<p><?php echo html_entity_decode($vo['profiles']);?></p>
 							</div>
 						</li>
 					</a>
