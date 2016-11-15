@@ -9,91 +9,46 @@
 	<include file="Public/nav"/> 
 	<div class="notice">请坚持自己的梦想~</div>
 	<div id="box">
-		<div class="carousel slide" id="home-silder">
-			<!-- <ol class="carousel-indicators">
-					        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					        <li data-target="#myCarousel" data-slide-to="1"></li>
-					        <li data-target="#myCarousel" data-slide-to="2"></li>
-					    </ol>  -->
-			<div class="carousel-inner">
-				<div class="item active item1">
-					<div class="">
-						<ul class="list">
-							<li><div></div></li>
-							<li><div></div></li>
-							<li><div></div></li>
-							<li><div></div></li>
-							<li><div></div></li>
-							<li><div></div></li>
-							<li><div></div></li>
-						</ul>
+		<div id="box-scroll">
+			<div class="container mt50">
+				<div class="row">
+					<div class="col-sm-9 article-list">
+						<div class="section">
+							<div class="title">
+								<h2>推荐阅读</h2>
+							</div>
+							<ul class="list">
+								<li>
+									<h3><a href="__ROOT__/home/index/artInfo">文章标题文章标题文章标题</a></h3>
+									<p>文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
+									<div class="art-info">
+										<span>时间：2016-03-02</span>
+										<span>分类：JS</span>
+									</div>
+								</li>
+							</ul>
+						</div>
 					</div>
-				</div>
-				<div class="item item2">
-					<div class="">
-						<ul class="list">
-							<li><div></div></li>
-							<li><div></div></li>
-							<li><div></div></li>
-							<li><div></div></li>
-							<li><div></div></li>
-							<li><div></div></li>
-							<li><div></div></li>
-						</ul>
+					<div class="col-sm-3 right-nav">
+						<h4>推荐网站</h4>
+						<ol>
+							<li><a href="#">网站</a></li>
+							<li><a href="#">网站</a></li>
+							<li><a href="#">网站</a></li>
+							<li><a href="#">网站</a></li>
+						</ol>
 					</div>
-				</div>
-				<div class="item">
-					<div class="">
-						<ul class="list">
-							<li><div></div></li>
-							<li><div></div></li>
-							<li><div></div></li>
-							<li><div></div></li>
-							<li><div></div></li>
-							<li><div></div></li>
-							<li><div></div></li>
-						</ul>
-					</div>
-				</div>
+				</div>		
 			</div>
 		</div>
-
 	</div>
 	<include file="Public/footer"/> 
 	<script>
-		$('.carousel').carousel({
-			interval:false,
+		$("#box-scroll").niceScroll({
+			cursorcolor: "#666",
+			cursorborder: "1px solid #696969",
+			scrollspeed: 30,
 		});
-		if(document.attachEvent){ 
-			document.attachEvent('onmousewheel',scrollFunc); 
-		} 
-		if(document.addEventListener){ 
-			document.addEventListener('DOMMouseScroll',scrollFunc,false); 
-		}
-		window.onmousewheel=document.onmousewheel=scrollFunc;
-		function scrollFunc(e){
-			// 向下滚动返回1，向上滚动返回-1
-			e = e || window.event;
-			if (e.wheelDelta) {
-				if (e.wheelDelta > 0) {
-					pageLast();
-				}else{
-					pageNext();
-				}
-			}else{
-				if (e.detail > 0) {
-					pageNext();
-				}else{
-					pageLast();
-				}
-			}
-		}
-		function pageNext(){
-			console.log(1);
-		}
-		function pageLast(){
-			console.log(-1);
-		}
 	</script>
  </body>
  </html>

@@ -1,0 +1,32 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>togor</title>
+	<include file="Public/header"/> 
+ </head>
+ <body>
+	<include file="Public/nav"/> 
+	<div class="notice">请坚持自己的梦想~</div>
+	<div id="box">
+		<div id="box-scroll">
+			<div class="about-part1 about-part">
+				<h4>Togor是什么</h4>
+				<p>Togor是一个追逐自由，崇尚真、善、美的口号。努力，生活就会更美好！</p>
+			</div>
+			<div class="about-part2 about-part">
+				<h4>用来做啥</h4>
+				<p>Togor对于我来说，就是一个分享自己学习、见解，分享自己觉得不错的音乐、视频、文章等。</p>
+			</div>
+		</div>
+	</div>
+	<include file="Public/footer"/> 
+	<script>
+		$("#box-scroll").niceScroll({
+			cursorcolor: "#666",
+			cursorborder: "1px solid #696969",
+			scrollspeed: 30,
+		});
+	</script>
+ </body>
+ </html>

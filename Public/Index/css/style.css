@@ -14,6 +14,10 @@
 .navbar-nav>li>a{
 	line-height: 50px;
 }
+.navbar-nav>li a:hover,
+.navbar-nav>li a:focus{
+	color: #888 !important;
+}
 .navbar-nav>li.active a{
 	color: #aaa !important;
 	background-color: rgb(59,59,59) !important;
@@ -27,9 +31,9 @@
 
 
 @media (max-width: 768px){
-	.navbar-right{
+	.navbar-right,.right-nav{
 		display: none;
-	}	
+	}
 }
 
 
@@ -41,21 +45,25 @@ html,body{
 	overflow: hidden;
 	font-family: "Myriad Pro", Arial, "FZLanTingHei-R-GBK", 方正兰亭黑, "Microsoft YaHei", 微软雅黑, STHeiti, 华文黑体, SimSun, 宋体, sans-serif;
 }
-ul{
+ul,h1,h2,h3,h4,h5,h6,ol{
 	margin: 0;
 	padding: 0;
 }
 li{
 	list-style: none;
 }
+a,a:hover,a:focus{
+	color: inherit;
+	text-decoration: none;
+}
 .notice{
 	position: fixed;
 	top: 30px;
 	left: 50%;
-	margin-left: -250px;
+	margin-left: -150px;
 	line-height: 20px;
 	color: #555;
-	width: 500px;
+	width: 300px;
 	height: 20px;
 	text-align: center;
 	z-index: 2;
@@ -66,15 +74,106 @@ li{
 	padding-top: 80px;
 	color: #999;
 }
-#box .slide .item .list{
-	padding:35px;
+#box-scroll{
+	height: 100%;
+	width: 100%;
 }
-#box .slide .item .list li{
-	width: 25%;
-	padding:30px;
+.article-list{}
+.article-list .section{
+	padding-bottom: 50px;
+}
+.article-list .section .title{
+}
+.article-list .section .title h2{
+	font-size: 18px;
+}
+.article-list .section .list {}
+.article-list .section .list li{
+	width: 100%;
+	padding:20px;
+	/*background-color: #555;*/
+	border-bottom: 1px dashed #555;
+}
+.article-list .section .list li:hover{
+	background-color: #434343;
+	border-bottom-style: solid;
+}
+.article-list .section .list li h3{
+	font-size: 16px;
+	line-height: 40px;
+	color: #999;
+}
+.article-list .section .list li h3 a:hover{
+	color: #777;
+	text-decoration: underline;
+}
+.article-list .section .list .art-info span{
+	margin-right: 15px;
+}
+.right-nav{}
+.right-nav h4{
+	margin-bottom: 20px;
+}
+.right-nav ol li{
 	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
 }
-#box .slide .item .list li>div{
-	background-color: #4a4a4a;
-	height: 260px;
+.right-nav ol li a{
+	display: inline-block;
+	background-color: #555;
+	padding: 5px 12px;
+	line-height: normal;
+}
+.right-nav ol li a:hover{
+	background-color: #474747;
+}
+
+
+
+
+
+.about-part{
+	text-align: center;
+}
+.about-part h4{
+	font-size: 36px;
+	font-weight: lighter;
+	margin-bottom: 30px;
+}
+.about-part p{
+	font-size: 18px;
+}
+.about-part1{
+	padding-top: 100px;
+	padding-bottom: 150px;
+}
+
+
+
+#article-detail{
+
+}
+#article-detail .art-title{
+	text-align: center;
+}
+#article-detail .art-title h2{
+	font-size: 20px;
+}
+#article-detail .art-tips{
+	text-align: center;
+	margin: 20px 0;
+	padding-bottom: 20px;
+	border-bottom: 1px dashed #555;
+}
+#article-detail .art-info{
+	padding: 20px;
+}
+#article-detail .art-info img{
+	display: block;
+	margin: 0 auto;
+}
+
+.mt50{
+	margin-top: 50px;
 }
