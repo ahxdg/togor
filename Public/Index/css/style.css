@@ -18,6 +18,21 @@
 	color: #aaa !important;
 	background-color: rgb(59,59,59) !important;
 }
+.carousel{
+	height: 100%;
+}
+.carousel-inner{
+	height: 100%;
+}
+
+
+@media (max-width: 768px){
+	.navbar-right{
+		display: none;
+	}	
+}
+
+
 
 html,body{
 	background-color: rgb(66,66,66);
@@ -25,6 +40,13 @@ html,body{
 	width: 100%;
 	overflow: hidden;
 	font-family: "Myriad Pro", Arial, "FZLanTingHei-R-GBK", 方正兰亭黑, "Microsoft YaHei", 微软雅黑, STHeiti, 华文黑体, SimSun, 宋体, sans-serif;
+}
+ul{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
 }
 .notice{
 	position: fixed;
@@ -42,4 +64,17 @@ html,body{
 	width: 100%;
 	height: 100%;
 	padding-top: 80px;
+	color: #999;
+}
+#box .slide .item .list{
+	padding:35px;
+}
+#box .slide .item .list li{
+	width: 25%;
+	padding:30px;
+	float: left;
+}
+#box .slide .item .list li>div{
+	background-color: #4a4a4a;
+	height: 260px;
 }
