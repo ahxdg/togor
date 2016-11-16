@@ -7,13 +7,17 @@ class IndexController extends Controller {
        $model = C('user_name');
        
        //读取数据库
-       $User = M('User');
-       $info = $User->select();
-       $User = M('Section');
-       $nav = $User->select();
-
-       $this->assign('user',$model);
-       $this->assign('list',$info);
+       $Articles = M('Article');
+       $articleList = $Articles->select();
+       $len = count($articleList);
+       for ($i=0; $i < $len; $i++) { 
+         if ($articleList[$i]['time']) {
+           $arr = explode(' ', $articleList[$i]['time'], 2);
+           $articleList[$i]['time'] = $arr[0];
+         }
+       }
+       $this->assign('list',$articleList);
+       $this->assign('menu', 'article');
        $this->assign('nav',$nav);
        $this->display();
     }
@@ -21,6 +25,24 @@ class IndexController extends Controller {
       $this->display();
     }
     public function artInfo(){
+
+      $id = $_GET['id'];
+        if (empty($id)) {
+            $this->assign('err','true');
+            $this->assign('info','该文章被火星人吃掉了...');
+        }
+        $Article = M('Article');
+        $data['id'] = $id;
+        $res = $Article->where($data)->select();
+        if (count($res) == 0) {
+            $this->assign('err','true');
+            $this->assign('info','该文章被火星人吃掉了...');
+        }else{
+            $info = $res[0];
+            $arr = explode(' ', $info['time'], 2);
+            $info['time'] = $arr[0];
+            $this->assign('info',$info);
+        }
       $this->display();
     }
 }

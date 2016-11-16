@@ -18,25 +18,21 @@
 								<h2>推荐阅读</h2>
 							</div>
 							<ul class="list">
-								<li>
-									<h3><a href="__ROOT__/home/index/artInfo">文章标题文章标题文章标题</a></h3>
-									<p>文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
-									<div class="art-info">
-										<span>时间：2016-03-02</span>
-										<span>分类：JS</span>
-									</div>
-								</li>
+								<volist name="list" id="vo">
+									<li data-id="{$vo.id}">
+										<h3><a href="__ROOT__/home/index/artInfo?id={$vo.id}">{$vo.title}</a></h3>
+										<p><?php echo html_entity_decode($vo['profiles']);?></p>
+										<div class="art-info">
+											<span>时间：{$vo.time}</span>
+											<span>分类：JS</span>
+										</div>
+									</li>
+								</volist>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-3 right-nav">
-						<h4>推荐网站</h4>
-						<ol>
-							<li><a href="#">网站</a></li>
-							<li><a href="#">网站</a></li>
-							<li><a href="#">网站</a></li>
-							<li><a href="#">网站</a></li>
-						</ol>
+						<include file="Public/recomLink"/>
 					</div>
 				</div>		
 			</div>

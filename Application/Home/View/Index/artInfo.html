@@ -13,35 +13,23 @@
 			<div class="container mt50">
 				<div class="row">
 					<div class="col-sm-9 article-detail" id="article-detail">
-						<div class="art-title">
-							<h2>文章题目文章题目文章题目</h2>
-						</div>
-						<div class="art-tips">
-							<span>时间：2016-03-02</span>
-							<span>分类：JS</span>
-						</div>
-						<div class="art-info">
-							<p>文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
-							<p>文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
-							<p>文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
-							<p>文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
-							<p>文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
-							<p>文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
-							<p>文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
-							<p>文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
-							<p>文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
-							<p>文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
-							<p>文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
-						</div>
+						<eq name="err" value="true">
+							{$info}
+							<else/>
+							<div class="art-title">
+								<h2>{$info['title']}</h2>
+							</div>
+							<div class="art-tips">
+								<span>时间：{$info['time']}</span>
+								<span>分类：JS</span>
+							</div>
+							<div class="art-info">
+								<?php echo html_entity_decode($info['info']);?>
+							</div>
+						</eq>
 					</div>
 					<div class="col-sm-3 right-nav">
-						<h4>推荐网站</h4>
-						<ol>
-							<li><a href="#">网站</a></li>
-							<li><a href="#">网站</a></li>
-							<li><a href="#">网站</a></li>
-							<li><a href="#">网站</a></li>
-						</ol>
+						<include file="Public/recomLink"/> 
 					</div>
 				</div>		
 			</div>

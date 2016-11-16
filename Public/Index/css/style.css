@@ -10,9 +10,11 @@
 .navbar-brand{
 	height: 80px;
 	line-height: 50px;
+	font-size: 28px;
 }
 .navbar-nav>li>a{
 	line-height: 50px;
+	font-size: 20px;
 }
 .navbar-nav>li a:hover,
 .navbar-nav>li a:focus{
@@ -60,7 +62,7 @@ a,a:hover,a:focus{
 	position: fixed;
 	top: 30px;
 	left: 50%;
-	margin-left: -150px;
+	margin-left: -200px;
 	line-height: 20px;
 	color: #555;
 	width: 300px;
@@ -85,7 +87,7 @@ a,a:hover,a:focus{
 .article-list .section .title{
 }
 .article-list .section .title h2{
-	font-size: 18px;
+	font-size: 24px;
 }
 .article-list .section .list {}
 .article-list .section .list li{
@@ -99,7 +101,7 @@ a,a:hover,a:focus{
 	border-bottom-style: solid;
 }
 .article-list .section .list li h3{
-	font-size: 16px;
+	font-size: 20px;
 	line-height: 40px;
 	color: #999;
 }
@@ -107,12 +109,17 @@ a,a:hover,a:focus{
 	color: #777;
 	text-decoration: underline;
 }
+.article-list .section .list li p{
+	font-size: 18px;
+}
 .article-list .section .list .art-info span{
 	margin-right: 15px;
+	font-size: 18px;
 }
 .right-nav{}
 .right-nav h4{
 	margin-bottom: 20px;
+	font-size: 24px;
 }
 .right-nav ol li{
 	float: left;
@@ -122,8 +129,10 @@ a,a:hover,a:focus{
 .right-nav ol li a{
 	display: inline-block;
 	background-color: #555;
+	height: 36px;
+	line-height: 30px;
 	padding: 5px 12px;
-	line-height: normal;
+	font-size: 18px;
 }
 .right-nav ol li a:hover{
 	background-color: #474747;
@@ -158,16 +167,21 @@ a,a:hover,a:focus{
 	text-align: center;
 }
 #article-detail .art-title h2{
-	font-size: 20px;
+	font-size: 24px;
 }
 #article-detail .art-tips{
 	text-align: center;
 	margin: 20px 0;
 	padding-bottom: 20px;
 	border-bottom: 1px dashed #555;
+	font-size: 18px;
 }
 #article-detail .art-info{
 	padding: 20px;
+	font-size: 18px;
+}
+#article-detail .art-info p{
+	font-size: 18px;
 }
 #article-detail .art-info img{
 	display: block;
