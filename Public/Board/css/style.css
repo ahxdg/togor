@@ -139,6 +139,7 @@ form#login .form-group{
 .article-info video{
 	width: 60%;
 	background-size: 100% 100%;
+	background-color: #e7e7e7;
 }
 .article-info img{
 	display: block;
