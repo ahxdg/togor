@@ -1,0 +1,212 @@
+/* reset */
+li{list-style: none;}
+ul,p{padding: 0;margin: 0;}
+body{
+	background-color: #f7f7f7;
+	padding-bottom: 60px;
+}
+
+.user{
+
+}
+.user-btn{
+	position: absolute;
+	top: 0;
+	right: 15px;
+	line-height: 50px;
+	display: block;
+	height: 50px;
+}
+
+
+/*登录页面*/
+.login-body{
+	position: relative;
+}
+form#login{
+	width: 500px;
+	position: fixed;
+	height: 400px;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -250px;
+}
+form#login .form-header{
+	padding-bottom: 50px;
+}
+form#login .form-group{
+	overflow: hidden;
+}
+
+
+
+/* 文章页面 */
+.operate{
+	border-bottom: 1px solid #eee;
+	overflow: hidden;
+	margin-top: -5px;
+	padding-left: 35px;
+	padding-right: 35px;
+}
+
+.article-list{
+	padding: 30px;
+}
+.article-list a{
+	text-decoration: none;
+}
+.article-list li{
+	margin-bottom: 30px;
+}
+.article-list li .title{
+	color: #000;
+	font-size: 16px;
+	height: 20px;
+	line-height: 20px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-weight: bold;
+}
+.article-list li>div{
+	background-color: #fff;
+	font-size: 14px;
+	padding: 10px 15px;
+	box-shadow: 0 0 5px #f4f4f4;
+	position: relative;
+}
+.article-list li>div:hover{
+	box-shadow: 0 0 10px #ddd; 
+}
+.article-list li>div p{
+	margin-top: 10px;
+	height: 60px;
+	line-height: 20px;
+	overflow: hidden;	
+	font-size: 14px;
+	color: #666;
+}
+.article-list li>div span{
+	color: #999;
+}
+.article-list li>div i.close{
+	width:20px;
+	height: 20px;
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #aaa;
+	z-index: 10;
+	text-align: center;
+	line-height: 20px;
+}
+.article-list li>div:hover i.close{
+	display: block;
+}
+/*新增*/
+.add-article{
+	padding: 0 30px;
+}
+
+.add-article .control-label{
+	line-height: 34px;
+}
+.add-article .form-group{
+	overflow: hidden;
+}
+
+.add-article #editor{
+	overflow: hidden;
+}
+
+.article-info .title{
+	text-align: center;
+	font-size: 16px;
+	color: #000;
+	font-weight: bold;
+}
+.article-info .profiles{
+	text-align: center;
+}
+.article-info .info{
+	padding-top: 20px;
+	margin-top: 20px;
+	border-top:1px dashed #eee;
+	line-height: 26px;
+}
+.art-style span{
+	margin-right: 20px;
+	cursor: pointer;
+}
+.art-style input{
+	margin-right: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+	.add-article .control-label{
+		width: 140px;
+	}
+}
+
+@media (max-width: 768px) {
+	.user-btn{
+		right: 80px;
+	}
+	form#login{
+		width: 100%;
+		margin-left:0;
+		left: 0;
+	}
+	.add-article{
+		padding: 0;
+	}
+	.article-list{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	#edui2{
+		display: none;
+	}
+}
+
+
+/* 页眉 */
+.navbar{
+	background-color: #fff;
+}
+
+/* 页脚 */
+.footer{
+	height: 50px;
+	width: 100%;
+	background-color: #333;
+	color: #888;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	font-size: 14px;
+	text-align: center;
+	line-height: 50px;
+	z-index: 1000;
+}
+
+
+.clear{
+	clear: both;
+}
+.mb0{
+	margin-bottom: 0px;
+}
