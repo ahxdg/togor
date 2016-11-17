@@ -136,7 +136,13 @@ form#login .form-group{
 	border-top:1px dashed #eee;
 	line-height: 26px;
 }
-
+.art-style span{
+	margin-right: 20px;
+	cursor: pointer;
+}
+.art-style input{
+	margin-right: 3px;
+}
 
 
 

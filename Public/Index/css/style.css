@@ -32,11 +32,6 @@
 }
 
 
-@media (max-width: 768px){
-	.navbar-right,.right-nav{
-		display: none;
-	}
-}
 
 
 
@@ -69,6 +64,7 @@ a,a:hover,a:focus{
 	height: 20px;
 	text-align: center;
 	z-index: 2;
+	text-shadow: 0 0 5px #222;
 }
 #box{
 	width: 100%;
@@ -176,18 +172,74 @@ a,a:hover,a:focus{
 	border-bottom: 1px dashed #555;
 	font-size: 18px;
 }
+#article-detail .art-tips span{
+	margin-right: 15px;
+	color: #777;
+}
 #article-detail .art-info{
 	padding: 20px;
 	font-size: 18px;
 }
 #article-detail .art-info p{
 	font-size: 18px;
+	margin-bottom: 15px;
+	line-height: 1.5em;
 }
 #article-detail .art-info img{
 	display: block;
-	margin: 0 auto;
 }
 
 .mt50{
 	margin-top: 50px;
+}
+
+
+
+@media (max-width: 768px){
+	.navbar-right,.right-nav{
+		display: none;
+	}
+}
+
+
+@media (max-width: 1366px){
+	.navbar-brand{
+		font-size: 24px;
+	}
+	.navbar-nav>li>a{
+		font-size: 16px;
+	}
+	#article-detail .art-info{
+		font-size: 16px;
+	}
+	#article-detail .art-info p{
+		font-size: 16px;
+	}
+	.right-nav ol li a{
+		font-size: 14px;
+		padding: 2px 10px;
+		line-height: 30px;
+		height: 30px;
+	}
+	.article-list .section .title h2{
+		font-size: 20px;
+	}
+	.article-list .section .list li h3{
+		font-size: 18px;
+	}
+	.article-list .section .list li p{
+		font-size: 16px;
+	}
+	.article-list .section .list li .art-info span{
+		font-size: 14px;
+	}
+	.right-nav h4{
+		font-size: 20px;
+	}
+	#article-detail .art-tips{
+		font-size: 14px;
+	}
+	#article-detail .art-title h2{
+		font-size: 20px;
+	}
 }

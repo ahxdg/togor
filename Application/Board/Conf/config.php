@@ -5,5 +5,13 @@ return array(
 	'URL_MODEL' => '2',
 	
 	//加载扩展配置
-	'LOAD_EXT_CONFIG' => 'user,db'
+	'LOAD_EXT_CONFIG' => 'user,db',
+
+
+
+
+
+	//文章类别
+
+	
 );

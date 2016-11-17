@@ -8,7 +8,7 @@ class IndexController extends Controller {
        
        //读取数据库
        $Articles = M('Article');
-       $articleList = $Articles->select();
+       $articleList = $Articles->order('id desc')->select();
        $len = count($articleList);
        for ($i=0; $i < $len; $i++) { 
          if ($articleList[$i]['time']) {

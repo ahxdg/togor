@@ -41,6 +41,19 @@
 						</div>
 					</div>
 					<div class="clear"></div>
+				<div class="form-group mb0">
+					<label for="title" class="control-label col-sm-3">文章类型：</label>
+				</div>
+				<div class="form-group col-sm-12">
+					<div class=" art-style">
+						<span><input type="radio" name="art-style" value="js">js</span>
+						<span><input type="radio" name="art-style" value="css">css</span>
+						<span><input type="radio" name="art-style" value="php">php</span>
+						<span><input type="radio" name="art-style" value="mysql">mysql</span>
+						<span><input type="radio" name="art-style" value="其他">其他</span>
+					</div>
+				</div>
+				<div class="clear"></div>
 					<div class="form-group mb0">
 						<label for="title" class="control-label col-sm-3">文章内容：</label>
 					</div>
@@ -78,6 +91,7 @@
 			var data = {};
 				data.title = $('form input[name="title"]').val();	
 				data.profiles = $('form input[name="profiles"]').val();	
+				data.little_class = $('form input[name="art-style"]:checked').val();
 		    	data.info = getContent(this);
 		    	data.id = $('#article-info').attr('data-id');
 		    $.ajax({

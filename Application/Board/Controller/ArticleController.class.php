@@ -4,7 +4,7 @@ use Think\Controller;
 class ArticleController extends BaseController {
     public function index(){
     	$Articles = M('Article');
-    	$articleList = $Articles->select();
+    	$articleList = $Articles->order('id desc')->select();
     	$len = count($articleList);
     	for ($i=0; $i < $len; $i++) { 
     		if ($articleList[$i]['time']) {
@@ -28,7 +28,8 @@ class ArticleController extends BaseController {
     		$Article = M('Article');
             $data['title'] = $post['title'];
     		$data['profiles'] = $post['profiles'];
-    		$data['info'] = $post['info'];
+            $data['info'] = $post['info'];
+    		$data['little_class'] = $post['little_class'];
     		$data['time'] = date('Y-m-d');
     		$Article->add($data);
     		$this->ajaxReturn(make_rtn('提交成功！',true));
@@ -81,6 +82,7 @@ class ArticleController extends BaseController {
             $data['title'] = $post['title'];
             $data['profiles'] = $post['profiles'];
             $data['info'] = $post['info'];
+            $data['little_class'] = $post['little_class'];
             $data['time'] = date('Y-m-d');
             $arr['id'] = $post['id'];
             $res = $Article->where($arr)->save($data);
