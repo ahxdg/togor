@@ -29,7 +29,9 @@ class ArticleController extends BaseController {
             $data['title'] = $post['title'];
     		$data['profiles'] = $post['profiles'];
             $data['info'] = $post['info'];
-    		$data['little_class'] = $post['little_class'];
+            $data['little_class'] = $post['little_class'];
+            $data['recommend'] = $post['recommend'];
+    		$data['big_class'] = $post['big_class'];
     		$data['time'] = date('Y-m-d');
     		$Article->add($data);
     		$this->ajaxReturn(make_rtn('提交成功！',true));
@@ -83,6 +85,7 @@ class ArticleController extends BaseController {
             $data['profiles'] = $post['profiles'];
             $data['info'] = $post['info'];
             $data['little_class'] = $post['little_class'];
+            $data['recommend'] = $post['recommend'];
             $data['time'] = date('Y-m-d');
             $arr['id'] = $post['id'];
             $res = $Article->where($arr)->save($data);

@@ -136,6 +136,14 @@ form#login .form-group{
 	border-top:1px dashed #eee;
 	line-height: 26px;
 }
+.article-info video{
+	width: 60%;
+	background-size: 100% 100%;
+}
+.article-info img{
+	display: block;
+	max-width: 60%;
+}
 .art-style span{
 	margin-right: 20px;
 	cursor: pointer;

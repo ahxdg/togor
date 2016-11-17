@@ -2,7 +2,7 @@
  <html lang="en">
  <head>
  	<meta charset="UTF-8">
- 	<title>togor</title>
+ 	<title>share-togor</title>
 	<include file="Public/header"/> 
  </head>
  <body>
@@ -15,16 +15,12 @@
 					<div class="col-sm-9 article-list">
 						<div class="section">
 							<div class="title">
-								<h2>推荐阅读</h2>
+								<h2>最近更新</h2>
 							</div>
 							<ul class="list">
 								<volist name="list" id="vo">
 									<li data-id="{$vo.id}">
-										<if condition="$vo.big_class eq 1">
-											<h3><a href="__ROOT__/home/index/artInfo?id={$vo.id}">{$vo.title}</a></h3>
-											<else/>
-											<h3><a href="__ROOT__/home/index/shareDetail?id={$vo.id}">{$vo.title}</a></h3>
-										</if>
+										<h3><a href="__ROOT__/home/index/shareDetail?id={$vo.id}">{$vo.title}</a></h3>
 										<p><?php echo html_entity_decode($vo['profiles']);?></p>
 										<div class="art-info">
 											<span>时间：{$vo.time}</span>

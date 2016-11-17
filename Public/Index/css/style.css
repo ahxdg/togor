@@ -139,7 +139,7 @@ a,a:hover,a:focus{
 
 
 .about-part{
-	text-align: center;
+	
 }
 .about-part h4{
 	font-size: 36px;
@@ -159,44 +159,57 @@ a,a:hover,a:focus{
 #article-detail{
 
 }
-#article-detail .art-title{
+#article-detail .art-title,#share-detail .art-title{
 	text-align: center;
 }
-#article-detail .art-title h2{
+#article-detail .art-title h2,#share-detail .art-title h2{
 	font-size: 24px;
 }
-#article-detail .art-tips{
+#article-detail .art-tips,#share-detail .art-tips{
 	text-align: center;
 	margin: 20px 0;
 	padding-bottom: 20px;
 	border-bottom: 1px dashed #555;
 	font-size: 18px;
 }
-#article-detail .art-tips span{
+#article-detail .art-tips span,#share-detail .art-tips span{
 	margin-right: 15px;
 	color: #777;
 }
-#article-detail .art-info{
+#article-detail .art-info,#share-detail .art-info{
 	padding: 20px;
 	font-size: 18px;
 }
-#article-detail .art-info p{
+#article-detail .art-info p,#share-detail .art-info p{
 	font-size: 18px;
 	margin-bottom: 15px;
 	line-height: 1.5em;
 }
-#article-detail .art-info img{
+#article-detail .art-info img,#share-detail .art-info img{
 	display: block;
+	max-width: 80%;
+}
+#article-detail .art-info a,#share-detail .art-info a{
+	text-decoration: underline;
+}
+#article-detail .art-info video,#share-detail .art-info video{
+	background-color: #444e4d;
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+	background-size: 100% 100%;
 }
 
 .mt50{
 	margin-top: 50px;
 }
-
+.copyright{
+	position: absolute;bottom:10px;right: 10px;color: #2f2c2f;
+}
 
 
 @media (max-width: 768px){
-	.navbar-right,.right-nav{
+	.navbar-right,.right-nav,.copyright{
 		display: none;
 	}
 }
@@ -209,11 +222,17 @@ a,a:hover,a:focus{
 	.navbar-nav>li>a{
 		font-size: 16px;
 	}
-	#article-detail .art-info{
+	#article-detail .art-info,#share-detail .art-info{
 		font-size: 16px;
 	}
-	#article-detail .art-info p{
+	#article-detail .art-info p,#share-detail .art-info p{
 		font-size: 16px;
+	}
+	#article-detail .art-tips,#share-detail .art-tips{
+		font-size: 14px;
+	}
+	#article-detail .art-title h2,#share-detail .art-title h2{
+		font-size: 20px;
 	}
 	.right-nav ol li a{
 		font-size: 14px;
@@ -236,10 +255,7 @@ a,a:hover,a:focus{
 	.right-nav h4{
 		font-size: 20px;
 	}
-	#article-detail .art-tips{
-		font-size: 14px;
-	}
-	#article-detail .art-title h2{
-		font-size: 20px;
+	.about-part h4{
+		font-size: 26px;
 	}
 }
