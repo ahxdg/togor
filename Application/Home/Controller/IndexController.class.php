@@ -68,16 +68,20 @@ class IndexController extends Controller {
         }
         $Article = M('Article');
         $data['id'] = $id;
-        $res = $Article->where($data)->select();
+        $res = $Article->where($data)->find();
+        $last = $Article->where('big_class=1 and id<'.$id)->order('id desc')->find();
+        $next = $Article->where('big_class=1 and id>'.$id)->find();
         if (count($res) == 0) {
             $this->assign('err','true');
             $this->assign('info','该文章被火星人吃掉了...');
         }else{
-            $info = $res[0];
+            $info = $res;
             $arr = explode(' ', $info['time'], 2);
             $info['time'] = $arr[0];
             $this->assign('info',$info);
         }
+      $this->assign('last', $last);
+      $this->assign('next', $next);
       $this->assign('menu', 'notes');
       $this->display();
     }
