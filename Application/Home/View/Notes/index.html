@@ -2,9 +2,9 @@
  <html lang="en">
  <head>
  	<meta charset="UTF-8">
- 	<title>share-togor</title>
-	<include file="Public/header"/> 
+ 	<title>notes-togor</title>
  	<meta name="description" content="togor,专注分享">
+	<include file="Public/header"/> 
  </head>
  <body>
 	<include file="Public/nav"/> 
@@ -21,7 +21,7 @@
 							<ul class="list">
 								<volist name="list" id="vo">
 									<li data-id="{$vo.id}">
-										<h3><a href="__ROOT__/home/index/shareDetail?id={$vo.id}">{$vo.title}</a></h3>
+										<h3><a href="__ROOT__/Notes/artInfo?id={$vo.id}">{$vo.title}</a></h3>
 										<p><?php echo html_entity_decode($vo['profiles']);?></p>
 										<div class="art-info">
 											<span>时间：{$vo.time}</span>
@@ -34,6 +34,7 @@
 					</div>
 					<div class="col-sm-3 right-nav">
 						<include file="Public/recomLink"/>
+						<include file="Public/littleLink"/>
 					</div>
 				</div>		
 			</div>

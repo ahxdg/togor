@@ -22,9 +22,9 @@
 								<volist name="list" id="vo">
 									<li data-id="{$vo.id}">
 										<if condition="$vo.big_class eq 1">
-											<h3><a href="__ROOT__/home/index/artInfo?id={$vo.id}">{$vo.title}</a></h3>
+											<h3><a href="__ROOT__/Notes/artInfo?id={$vo.id}">{$vo.title}</a></h3>
 											<else/>
-											<h3><a href="__ROOT__/home/index/shareDetail?id={$vo.id}">{$vo.title}</a></h3>
+											<h3><a href="__ROOT__/Share/shareDetail?id={$vo.id}">{$vo.title}</a></h3>
 										</if>
 										<p><?php echo html_entity_decode($vo['profiles']);?></p>
 										<div class="art-info">
@@ -38,6 +38,7 @@
 					</div>
 					<div class="col-sm-3 right-nav">
 						<include file="Public/recomLink"/>
+						<include file="Public/littleLink"/>
 					</div>
 				</div>		
 			</div>

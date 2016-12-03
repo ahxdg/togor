@@ -133,7 +133,10 @@ a,a:hover,a:focus{
 .right-nav ol li a:hover{
 	background-color: #474747;
 }
-
+.right-nav .recom-link{
+	overflow: hidden;
+	margin-bottom: 20px;
+}
 
 
 
