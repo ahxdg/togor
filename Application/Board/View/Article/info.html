@@ -46,11 +46,12 @@
 				</div>
 				<div class="form-group col-sm-12">
 					<div class="col-sm-6 art-style">
-						<span><input type="radio" name="art-style" <if condition="$info['little_class'] eq 'js'">checked</if> value="js">js</span>
-						<span><input type="radio" name="art-style" <if condition="$info['little_class'] eq 'css'">checked</if> value="css">css</span>
+						<span><input type="radio" name="art-style" <if condition="$info['little_class'] eq 'web'">checked</if> value="web">web</span>
+						<span><input type="radio" name="art-style" <if condition="$info['little_class'] eq 'python'">checked</if> value="python">python</span>
 						<span><input type="radio" name="art-style" <if condition="$info['little_class'] eq 'php'">checked</if> value="php">php</span>
-						<span><input type="radio" name="art-style" <if condition="$info['little_class'] eq 'sql'">checked</if> value="mysql">mysql</span>
-						<span><input type="radio" name="art-style" <if condition="$info['little_class'] eq '其他'">checked</if> value="其他">其他</span>
+						<span><input type="radio" name="art-style" <if condition="$info['little_class'] eq 'sql'">checked</if> value="sql">sql</span>
+						<span><input type="radio" name="art-style" <if condition="$info['little_class'] eq 'share'">checked</if> value="share">分享</span>
+						<span><input type="radio" name="art-style" <if condition="$info['little_class'] eq 'other'">checked</if> value="other">其他</span>
 					</div>
 					<div class="col-sm-6">
 						<span>是否推荐阅读：<input type="checkbox" name="recom" value="1" <if condition="$info['recommend'] eq 1">checked</if>></span>

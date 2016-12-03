@@ -1,0 +1,52 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>notes-togor</title>
+ 	<meta name="description" content="togor,专注分享">
+	<include file="Public/header"/> 
+ </head>
+ <body>
+	<include file="Public/nav"/> 
+	<div class="notice">请坚持自己的梦想~</div>
+	<div id="box">
+		<div id="box-scroll">
+			<div class="container mt50">
+				<div class="row">
+					<div class="col-sm-9 article-list">
+						<div class="section">
+							<div class="title">
+								<h2>最近更新</h2>
+							</div>
+							<ul class="list">
+								<volist name="list" id="vo">
+									<li data-id="{$vo.id}">
+										<h3><a href="__ROOT__/Notes/artInfo?id={$vo.id}">{$vo.title}</a></h3>
+										<p><?php echo html_entity_decode($vo['profiles']);?></p>
+										<div class="art-info">
+											<span>时间：{$vo.time}</span>
+											<span>分类：{$vo.little_class}</span>
+										</div>
+									</li>
+								</volist>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3 right-nav">
+						<include file="Public/recomLink"/>
+						<include file="Public/littleLink"/>
+					</div>
+				</div>		
+			</div>
+		</div>
+	</div>
+	<include file="Public/footer"/> 
+	<script>
+		$("#box-scroll").niceScroll({
+			cursorcolor: "#666",
+			cursorborder: "1px solid #696969",
+			scrollspeed: 30,
+		});
+	</script>
+ </body>
+ </html>
