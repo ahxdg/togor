@@ -2,7 +2,9 @@
  <html lang="en">
  <head>
  	<meta charset="UTF-8">
- 	<title>togor</title>
+ 	<meta name="keywords" content="{$info['title']}">
+ 	<meta name="description" content="togor,专注分享">
+ 	<title>{$info['title']}-togor</title>
 	<include file="Public/header"/> 
  </head>
  <body>
@@ -27,10 +29,9 @@
 								<?php echo html_entity_decode($info['info']);?>
 							</div>
 						</eq>
-						<div>
-							<if condition="count($last) eq 1">afd<else/>adsf</if>
-							<p><a href="#">上一篇：暗示法撒旦方</a></p>
-							<p><a href="#">下一篇：暗示法撒旦对方</a></p>
+						<div class="to-be">
+							<p>上一篇：<if condition="count($last) eq Null">没有了<else/><a href="./artInfo?id={$last.id}">{$last.title}</a></if></p>
+							<p>下一篇：<if condition="count($next) eq Null">没有了<else/><a href="./artInfo?id={$next.id}">{$next.title}</a></if></p>
 						</div>
 					</div>
 					<div class="col-sm-3 right-nav" style="padding-top: 90px;">
