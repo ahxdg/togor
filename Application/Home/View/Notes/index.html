@@ -41,12 +41,54 @@
 		</div>
 	</div>
 	<include file="Public/footer"/> 
-	<script>
+	<script type="text/javascript">
 		$("#box-scroll").niceScroll({
 			cursorcolor: "#666",
 			cursorborder: "1px solid #696969",
 			scrollspeed: 30,
 		});
+		$('#box-scroll').on('scroll',function(event){
+			var e = event || window.event;
+			var ah = e.target.scrollHeight;
+			var h = e.target.clientHeight;
+			var top = e.target.scrollTop;
+			if (top>0) {
+				$('.right-nav').css('position','relative').css('top',top);
+			}
+			if (ah-h-top<100) {
+				loadMore($('.list li').length,5);
+			}
+		});
+		var AJAXEND = 1;
+		function loadMore(offset,len){
+			if (AJAXEND == 0) {
+				return;
+			}
+			AJAXEND = 0;
+			$.ajax({
+				url:'__ROOT__/Home/Notes/loadMore',
+				data:{'offset':offset,'length':len},
+				type:'get',
+				success:function(res){
+					var html = '';
+					for (var i = 0; i < res.length; i++) {
+						html += '<li data-id="'+res[i].id+'">'
+								+'<h3><a href="__ROOT__/Notes/artInfo?id='+res[i].id+'">'+res[i].title+'</a></h3>'
+								+'<p>'+res[i].profiles+'</p>'
+								+'<div class="art-info">'
+								+'<span>时间：'+res[i].time+'</span>'
+								+'<span>分类：'+res[i].little_class+'</span>'
+								+'</div></li>';
+					}
+					$('.list').append(html);
+					if (res.length<len) {
+						AJAXEND = 0;
+					}else{
+						AJAXEND = 1;
+					}
+				}
+			});
+		}
 	</script>
  </body>
  </html>

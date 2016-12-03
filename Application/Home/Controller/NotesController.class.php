@@ -3,10 +3,9 @@ namespace Home\Controller;
 use Think\Controller;
 class NotesController extends Controller {
     public function index(){
-
        //读取数据库
        $Articles = M('Article');
-       $articleList = $Articles->order('id desc')->where('big_class=1')->select();
+       $articleList = $Articles->order('id desc')->where('big_class=1')->limit(8)->select();
        $len = count($articleList);
        for ($i=0; $i < $len; $i++) { 
          if ($articleList[$i]['time']) {
@@ -125,4 +124,21 @@ class NotesController extends Controller {
       $this->assign('menu', 'notes');
       $this->display();
 	}
+  public function loadMore(){
+    if (IS_GET) {
+      $get = I('get.');
+      $offset = (int)$get['offset'];
+      $length = (int)$get['length'];
+    }
+      $Articles = M('Article');
+       $list = $Articles->order('id desc')->where('big_class=1')->limit($offset,$length)->select();
+       $len = count($list);
+       for ($i=0; $i < $len; $i++) { 
+         if ($list[$i]['time']) {
+           $arr = explode(' ', $list[$i]['time'], 2);
+           $list[$i]['time'] = $arr[0];
+         }
+       }
+      $this->ajaxReturn($list);
+  }
 }
