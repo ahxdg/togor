@@ -51,6 +51,18 @@
 			cursorborder: "1px solid #696969",
 			scrollspeed: 30,
 		});
+		$('#box-scroll').on('scroll',function(event){
+			var e = event || window.event;
+			var ah = e.target.scrollHeight;
+			var h = e.target.clientHeight;
+			var top = e.target.scrollTop;
+			if (top>0) {
+				$('.right-nav').css('position','relative').css('top',top);
+			}
+			if (ah-h-top<100) {
+				loadMore($('.list li').length,5);
+			}
+		});
 	</script>
  </body>
  </html>

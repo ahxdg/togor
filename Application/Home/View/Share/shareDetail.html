@@ -29,6 +29,10 @@
 								<?php echo html_entity_decode($info['info']);?>
 							</div>
 						</eq>
+						<div class="to-be">
+							<p>上一篇：<if condition="count($last) eq Null">没有了<else/><a href="./shareDetail?id={$last.id}">{$last.title}</a></if></p>
+							<p>下一篇：<if condition="count($next) eq Null">没有了<else/><a href="./shareDetail?id={$next.id}">{$next.title}</a></if></p>
+						</div>
 					</div>
 					<div class="col-sm-3 right-nav" style="padding-top: 90px;">
 						<include file="Public/recomLink"/> 
@@ -43,6 +47,13 @@
 			cursorcolor: "#666",
 			cursorborder: "1px solid #696969",
 			scrollspeed: 30,
+		});
+		$('#box-scroll').on('scroll',function(event){
+			var e = event || window.event;
+			var top = e.target.scrollTop;
+			if (top>70) {
+				$('.right-nav').css('position','relative').css('top',top-70);
+			}
 		});
 	</script>
  </body>

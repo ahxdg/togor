@@ -28,6 +28,8 @@ class ShareController extends Controller {
         $Article = M('Article');
         $data['id'] = $id;
         $res = $Article->where($data)->select();
+        $last = $Article->where('big_class=2 and id<'.$id)->order('id desc')->find();
+        $next = $Article->where('big_class=2 and id>'.$id)->find();
         if (count($res) == 0) {
             $this->assign('err','true');
             $this->assign('info','该文章被火星人吃掉了...');
@@ -37,6 +39,9 @@ class ShareController extends Controller {
             $info['time'] = $arr[0];
             $this->assign('info',$info);
         }
+
+      $this->assign('last', $last);
+      $this->assign('next', $next);
       $this->assign('menu', 'share');
       $this->display();
     }
