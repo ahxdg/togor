@@ -222,6 +222,16 @@ a,a:hover,a:focus{
 	.navbar-right,.right-nav,.copyright{
 		display: none;
 	}
+	html,body{
+		height:auto;
+	}
+	.notice{
+		position:absolute;
+		margin-left:-150px;
+	}
+	.navbar{
+		position:absolute;
+	}
 }
 
 
