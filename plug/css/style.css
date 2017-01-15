@@ -9,16 +9,16 @@ html,body{
 .nav{
 	height: 60px;
 	line-height: 60px;
-	border-bottom: 1px solid #eee;
-	background-color: #fff;
+	background-color: rgb(59,59,59);
 	overflow: hidden;
+	box-shadow: 0 1px 2px rgb(44,44,44);
 }
 .nav .logo{
 	float: left;
 }
 .nav .logo a{
 	font-size: 24px;
-	color: #333;
+	color: #aaa;
 }
 .nav .logo a:hover, 
 .nav .logo a:focus{
