@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <style type="text/css">
+    	ul,li{list-style: none;}
+    	#message{position: fixed;width: 100%;bottom: 0;}
+    	.avatar{height:}
+      .mui-title{color: #035c29}
+    	#msg{padding: 2px 5px 40px 5px;}
+    	#msg .list{overflow: hidden;}
+    	#msg .list span{height:40px;width:40px;display: block;float: left;background: rgba(0,0,0,.5) url(./images/logo.jpg) center;background-size:100% 100%;border-radius: 50%;margin-right: 10px;}
+    	#msg .list p{background: #fff;line-height: 24px;float: left;padding:8px 10px;border-radius: 5px;position: relative;max-width: 75%;}
+      #msg .list p:before{content:'';display: block;width: 7px;height:14px;background: url(./images/l.png); background-size: 100% 100%;position: absolute;left: -7px;top: 13px;}
+    	#message input{width: 80%;font-size:14px;}
+    	#send{display: block;float: right;height: 40px;width: 20%;text-align: center;line-height: 40px;border-left: 1px solid #fafafa;z-index: 2;color: #035c29;font-size: 14px;}
+    	.mui-input-row .mui-input-clear~.mui-icon-clear{right: 20%;}
+    </style>
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">把你的文字变成声音</h1>
+	</header>
+	<div class="mui-content">
+		<ul id="msg">
+			<!-- <li class="list">
+        <span class="avatar"></span>
+        <p class="msg-info">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</p>
+      </li>
+      <li class="list">
+        <span class="avatar"></span>
+        <p class="msg-info">adf</p>
+      </li> -->
+		</ul>
+		<form class="mui-input-group" id="message">
+		    <div class="mui-input-row">
+		        <input type="text" class="mui-input-clear" id="info" placeholder="请输入消息">
+		        <a href="javascript:;" id="send">发送</a>
+		    </div>
+		</form>
+		<audio id="playVoice"></audio>
+	</div>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+      	var msgBox = document.getElementById('msg');
+      	function addMsg(msg){
+      		var li = document.createElement('li');
+      		li.setAttribute('class','list');
+      		var span = document.createElement('span');
+      		span.setAttribute('class','avatar');
+      		var p = document.createElement('p');
+      		p.setAttribute('class','msg-info');
+      		var txt = document.createTextNode(msg);
+      		p.appendChild(txt);
+      		li.appendChild(span);
+      		li.appendChild(p);
+      		msgBox.appendChild(li);
+      	}
+      	mui('body').on('click','#send',function(){
+      		var value = mui('#info')[0].value;
+      		if(value.length>0){
+      			addMsg(value);
+      			palyVoice(value);
+      		}else{
+      			showTips('请输入内容');
+      		}
+      	});
+        mui('#msg').on('click','.msg-info',function(){
+          palyVoice(this.innerText);
+        });
+      	function showTips(txt){
+      		
+      	}
+        function palyVoice(txt){
+          mui('#playVoice')[0].src = 'http://tsn.baidu.com/text2audio?vol=9&per=1&ctp=1&lan=zh&ie=UTF-8&spd=5&text='+encodeURIComponent(txt);
+          mui('#playVoice')[0].volume=1.0;
+          mui('#playVoice')[0].play();
+          mui('#info')[0].value = '';
+        }
+    </script>
+</body>
+</html>
