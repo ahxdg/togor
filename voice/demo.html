@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>WebSocket Test</title>
+  </head>
+  <body>
+    <audio id="voice" autoplay="autoplay" preload="true" src="" style="display: none;" controls="controls"></audio>
+    <input id="msg" type="text"><input type="button" id="send" value="send">
+    <div id="msg-list"></div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io.connect('ws://192.168.52.186:3012');
+      socket.on('news', function (data) {
+        showMsg(data);
+      });
+      var sendBtn = document.getElementById('send');
+      var msgInput = document.getElementById('msg');
+      var msgList = document.getElementById('msg-list');
+      var voice = document.getElementById('voice');
+      sendBtn.addEventListener('click',sendMsg,false);
+      msgInput.addEventListener('keydown',function(e){
+        if (e.keyCode == 13) {
+          sendMsg();
+        }
+      },false);
+      function login(){
+        var obj = {};
+          obj.name = 'hee';
+          obj.id = 10021;
+          socket.emit('login',obj);
+      }
+      function sendMsg(msg){
+        var msg = msgInput.value;
+        if (msg.length>0) {
+          socket.emit('message',msg);
+          msgInput.value = '';
+        }
+      }
+      function showMsg(msg){
+        var p = document.createElement('p');
+        var node = document.createTextNode(msg);
+        p.appendChild(node);
+        msgList.appendChild(p);
+        console.log(voice);
+        voice.src = 'http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=5&text='+encodeURIComponent(msg);
+        voice.play();
+        // voice.addEventListener("loadstart", showVideo, false);
+        /*var newAudio = new Audio();
+        console.log(newAudio);
+        newAudio.src = 'http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=5&text='+encodeURIComponent(msg);
+        newAudio.play();*/
+      }
+
+     /* document.body.addEventListener('touchstart',function(){
+        showVideo();
+        //document.body.removeEventListener('touchstart');
+      },false);*/
+    </script>
+  </body>
+</html>
